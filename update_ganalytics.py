@@ -6,7 +6,7 @@ import fileinput
 
 def analyticsupdate(arg, dirname, files):
   for file in files:
-  fullfilepath = os.path.join(dirname, file)
+    fullfilepath = os.path.join(dirname, file)
   for line in fileinput.input(fullfilepath, inplace=True):
     if re.search(r'UA-\d{8}-\d', line):
       print re.sub(r'UA-\d{8}-\d', arg, line)
